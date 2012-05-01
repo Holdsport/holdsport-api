@@ -234,3 +234,5 @@ Example
 ```
 curl -H "Content-Type: application/json" -X PUT -u "demo:demo" http://apldsport.dk/v1/user -d '{"user": { "addresses": [{"street": "Sandageralle", "postcode": "8300", "city": "Odder", "mobile": "88888887", "email": "test@holdsport.dk"}], "firstname": "Demo", "lastname": "Demosen"}}'
 ```
+A user may have one or two addresses each containing some of the following fields:
+street, city, postcode, telephone, mobile, email, email_ex, parents_name
