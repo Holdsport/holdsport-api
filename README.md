@@ -232,4 +232,5 @@ Result
 ### Updating the user profile
 Example
 ```
-curl -H "Content-Type: application/json" -X PUT -u "demo:demo" http://api.holdsport.dk/v1/user -d '{"user": {"street": "Sandageralle", "postcode": "8300", "city": "Odder", "firstname": "Demo", "lastname": "Demosen", "mobile": "88888888", "email": "test@holdsport.dk"}}'
+curl -H "Content-Type: application/json" -X PUT -u "demo:demo" http://apldsport.dk/v1/user -d '{"user": { "addresses": [{"street": "Sandageralle", "postcode": "8300", "city": "Odder", "mobile": "88888887", "email": "test@holdsport.dk"}], "firstname": "Demo", "lastname": "Demosen"}}'
+```
