@@ -190,6 +190,45 @@ The result
 ```
 The _role_ field can have three possible values 1 for player, 2 for coach and 3 for assistant coach.
 
+### Getting the user profile
+Example
+```
+curl -u "demo:demo"  -H "Accept: application/json" http://api.holdsport.dk/v1/user
+```
+
+Result
+```json
+{
+    "addresses": [
+        {
+            "city": "aarhus bj", 
+            "email": "info@holdsport.dk", 
+            "email_ex": "Hyl@h", 
+            "mobile": "22775467", 
+            "parents_name": "Jens Baggesen", 
+            "postcode": "8000", 
+            "street": "Dalga ", 
+            "telephone": "80964"
+        }, 
+        {
+            "city": "aarhus ", 
+            "email": "info@holdsport.dk", 
+            "email_ex": "Hyl@h ii. bi", 
+            "mobile": "22775467", 
+            "parents_name": "Jens Baggesen", 
+            "postcode": "8000 b", 
+            "street": "Dalga s", 
+            "telephone": "80964666"
+        }
+    ], 
+    "birthday": "1925-05-05", 
+    "firstname": "Demo han", 
+    "id": 99464, 
+    "lastname": "Danser Ye"
+}
+```
+
+
 ### Updating the user profile
 Example
 ```
