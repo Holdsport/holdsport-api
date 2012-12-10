@@ -188,7 +188,7 @@ The result
   }
 ]
 ```
-The _role_ field can have three possible values 1 for player, 2 for coach, 3 for assistant coach, 4 injured, and 5 for inactive.
+The _role_ field can have three possible values 1 for player, 2 for coach, 3 for assistant coach, 4 for injured, and 5 for inactive.
 
 ### Getting the user profile
 Example
