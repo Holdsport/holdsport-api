@@ -236,3 +236,9 @@ curl -H "Content-Type: application/json" -X PUT -u "demo:demo" http://apldsport.
 ```
 A user may have one or two addresses each containing some of the following fields:
 street, city, postcode, telephone, mobile, email, email_ex, parents_name
+
+You can upload a profile picture by using a standard Multipart form submit ie.
+
+```
+curl -X PUT -F "user[profile_picture]=@photo.jpg" -u "demo:demo" http://api.holdsport.dk/v1/user
+```
