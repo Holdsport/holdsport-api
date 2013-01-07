@@ -190,6 +190,37 @@ The result
 ```
 The _role_ field can have five possible values 1 for player, 2 for coach, 3 for assistant coach, 4 for injured, and 5 for inactive.
 
+### Getting the list of notes for the team
+Example
+```
+curl -u "demo:demo"  -H "Accept: application/json" http://api.holdsport.dk/v1/teams/7585/notes
+```
+
+The result
+```json
+[
+    {
+        "attachment_path": null, 
+        "body": "Det gik rigtig godt i l\u00f8rdags :-)", 
+        "created_at": "2013-01-06T23:30:38+01:00", 
+        "created_by": "Ole Kristensen", 
+        "title": "Kampreferat"
+    }, 
+    {
+        "attachment_path": "/media/BAhbBlsHOgZmSSIpMjAxMy8wMS8wNy8xNV8xOF8yMV82NzNfVWRrbGlwXzIuSlBHBjoGRVQ/Udklip-2.JPG",
+        "body": "Hver torsdag fra kl. 17 til 19.", 
+        "created_at": "2013-01-06T23:30:38+01:00", 
+        "created_by": "Ole Kristensen", 
+        "title": "Tr\u00e6ningstider"
+    }, 
+]
+```
+
+The attachment in the example can be fetched, by fetching the url
+```
+http://api.holdsport.dk/media/BAhbBlsHOgZmSSIpMjAxMy8wMS8wNy8xNV8xOF8yMV82NzNfVWRrbGlwXzIuSlBHBjoGRVQ/Udklip-2.JPG
+```
+
 ### Getting the user profile
 Example
 ```
