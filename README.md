@@ -102,6 +102,30 @@ curl -u "demo:demo" http://api.holdsport.dk/v1/teams/7585/activities?date=2012-0
 ```
 The default for these parameters are _page=1_, _per_page=20_, and _date = today_.
 
+#### Getting the details for a single activity
+Example
+```
+curl -u "demo:demo" -H "Accept: application/json" http://api.holdsport.dk/v1/teams/6237/activities/256592
+````
+
+The result
+```json
+{
+    "comment": "", 
+    "endtime": "", 
+    "id": 256592, 
+    "name": "Tur til Tyskland", 
+    "pickup_place": "", 
+    "pickup_time": "", 
+    "place": "", 
+    "starttime": "2012-01-13T01:00:00+01:00", 
+    "status": "tilmeldt",
+    "action_method": "PUT", 
+    "action_path": "/v1/activities/256592/activities_users/2363897", 
+    "actions": []
+}
+```
+
 #### Change the user status (attending, unregistering, etc.)
 The interesting part of the response is this
 ```json
