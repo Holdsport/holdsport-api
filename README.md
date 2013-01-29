@@ -190,6 +190,23 @@ The result
 ```
 The _role_ field can have five possible values 1 for player, 2 for coach, 3 for assistant coach, 4 for injured, and 5 for inactive.
 
+### Getting a single team member
+Example
+```
+curl -u "demo:demo"  -H "Accept: application/json" http://api.holdsport.dk/v1/teams/7585/members/78776
+```
+
+The result
+```json
+{ "address" : " ",
+"email" : "info@holdsport.dk",
+"id" : 78776,
+"mobile" : "12345678",
+"name" : "Demo Demo",
+"role" : 2
+}
+```
+
 ### Getting the list of notes for the team
 Example
 ```
