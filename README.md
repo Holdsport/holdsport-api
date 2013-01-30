@@ -58,7 +58,22 @@ The result
         "status": "tilmeldt",
         "action_method": "PUT", 
         "action_path": "/v1/activities/256592/activities_users/2363897", 
-        "actions": []
+        "actions": [],
+        "no_rsvp_count": 3,
+        "no_rsvp": [
+            {
+                "id": 148295, 
+                "name": "Lars Christiansen"
+            }, 
+            {
+                "id": 148288, 
+                "name": "Lars J\u00f8rgensen"
+            }, 
+            {
+                "id": 148293, 
+                "name": "S\u00f8ren Knudsen"
+            }
+        ], 
     }, 
     {
         "comment": "", 
@@ -80,6 +95,13 @@ The result
                     "picked": 1
                 }
             }
+        ],
+        "no_rsvp_count": 1,
+        "no_rsvp": [
+            {
+                "id": 148295, 
+                "name": "Lars Christiansen"
+            }
         ]
     }
 ]
@@ -89,6 +111,9 @@ The _status_ value denotes the users current status with respect to the activity
 The _actions_ arrays denotes the possible actions that the user can take with respect to this activity.
 
 _Pagination_ is done by adding a _page_ and _per_page_ parameter.
+
+_no_rsvp_count_ denotes the number of participants who haven't responded yet. _no_rsvp_ is an array
+of the first 20 members who haven't responded yet.
 
 Example
 ```
