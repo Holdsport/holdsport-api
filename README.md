@@ -226,6 +226,7 @@ The result
     "id" : 78776,
     "mobile" : "12345678",
     "name" : "Demo Demo",
+    "profile_picture_path": "", 
     "role" : 2
   },
   { "address" : "8000 Aarhus",
@@ -233,11 +234,17 @@ The result
     "id" : 79413,
     "mobile" : "",
     "name" : "Kkk Kkkk"
+    "profile_picture_path": "/media/BAhbB1sHOgZmSSI4MjAxMy8wg", 
     "role" : 1
   }
 ]
 ```
 The _role_ field can have five possible values 1 for player, 2 for coach, 3 for assistant coach, 4 for injured, and 5 for inactive.
+
+The profile picture in the example can be fetched, by fetching the url
+```
+http://api.holdsport.dk/media/BAhbB1sHOgZmSSI4MjAxMy8wg
+```
 
 ### Getting a single team member
 Example
@@ -321,7 +328,8 @@ Result
     "birthday": "1925-05-05", 
     "firstname": "Demo han", 
     "id": 99464, 
-    "lastname": "Danser Ye"
+    "lastname": "Danser Ye",
+    "profile_picture_path": "/media/BAhbB1sHOgZmSSJDMjAxMy8wMy8wMS8wOV8wNF8zMF81OTdfU2NyZWVuX1Nob3RfMj"
 }
 ```
 
