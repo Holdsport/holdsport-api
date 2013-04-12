@@ -327,6 +327,8 @@ Result
     ], 
     "birthday": "1925-05-05", 
     "firstname": "Demo han", 
+    "gender": "male",
+    "age": 88,
     "id": 99464, 
     "lastname": "Danser Ye",
     "profile_picture_path": "/media/BAhbB1sHOgZmSSJDMjAxMy8wMy8wMS8wOV8wNF8zMF81OTdfU2NyZWVuX1Nob3RfMj"
