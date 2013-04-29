@@ -354,7 +354,7 @@ curl -X PUT -F "user[profile_picture]=@photo.jpg" -u "demo:demo" http://api.hold
 ```
 
 
-### Getting the list of profiles that this is an admin for
+### Getting the list of profiles that this user is an admin for
 Example
 ```bash
 curl -u "demo:demo" -H "Accept: application/json" http://api.holdsport.dk/v1/profiles
