@@ -6,6 +6,9 @@ The API uses http basic authentication. If the username is demo and the password
 ```bash
 http://demo:demo@api.holdsport.dk/v1/teams
 ```
+
+If the user is managed by an admin you can use http basic authentication with the user id of the managed user and the password of the _admin_ user.
+
 ## Data format
 JSON UTF-8 encoded strings.
 
@@ -348,4 +351,39 @@ You can upload a profile picture by using a standard Multipart form submit ie.
 
 ```
 curl -X PUT -F "user[profile_picture]=@photo.jpg" -u "demo:demo" http://api.holdsport.dk/v1/user
+```
+
+
+### Getting the list of profiles that this is an admin for
+Example
+```bash
+curl -u "demo:demo" -H "Accept: application/json" http://api.holdsport.dk/v1/profiles
+```
+
+Result
+```json
+[
+  { "address" : " ",
+    "email" : "info@holdsport.dk",
+    "id" : 78776,
+    "mobile" : "12345678",
+    "name" : "Demo Demo"
+  },
+  { "address" : "8000 Aarhus",
+    "email" : "fran@juj.dk",
+    "id" : 79413,
+    "mobile" : "",
+    "name" : "Kkk Kkkk"
+  }
+]
+
+```
+
+The first profile returned is the profile of the admin. If there are no more profiles, the user is not an admin for other users.
+
+To authenticate as the second user in the example you would use the user id (79413) and the password of the _admin_ user (demo).
+
+Example
+```bash
+curl -u "79413:demo" -H "Accept: application/json" http://api.holdsport.dk/v1/teams
 ```
