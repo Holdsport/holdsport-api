@@ -106,6 +106,33 @@ The result
                 "name": "Lars Christiansen"
             }
         ]
+    },
+    {
+        "action_method": "POST",
+        "action_path": "/v1/activities/653806/activities_coaches",
+        "actions": [
+            {
+                "activities_coach": {
+                    "name": "Attend"
+                }
+            }
+        ],
+        "activities_coaches": [],
+        "activities_users": [],
+        "club": "false",
+        "comment": "",
+        "comments": [],
+        "department": false,
+        "endtime": "",
+        "id": 653806,
+        "max_attendees": 36,
+        "name": "Uden tr\u00e6nere",
+        "no_rsvp": [
+            {
+                "id": 171725,
+                "name": "Christian Poulsen"
+            }
+        ]
     }
 ]
 ```
@@ -189,6 +216,61 @@ curl -H "Content-Type: application/json" -X POST -u "demo:demo" http://api.holds
 If the request was successful a HTTP status 201 (Created) is returned.
 
 If there was an error a HTTP status 422 (Unprocessable Entity) is returned.
+
+#### Activities with special requirements for coaches
+Some activities have special requirements for coaches attending/unattending. Those activities will in addition to the lists of players attending also have a list of coaches attending ie. something like this:
+
+```json
+  "activities_coaches": [
+            {
+                "name": "Martin Olsen",
+                "updated_at": "2013-05-07T10:12:14+02:00",
+                "user_id": 171716
+            }
+        ]
+```
+
+If it is an activity with special requirements for the coach, the action stuff will be along the lines
+
+```json
+   "action_method": "POST",
+   "action_path": "/v1/activities/653806/activities_coaches",
+   "actions": [
+         {
+             "activities_coach": {
+               "name": "Attend"
+             }
+         }
+     ]
+```
+
+Note that the action path ends with activities_coaches (as opposed to activities_users).
+
+Make the coach attend by performing the following request in curl
+```
+curl -H "Content-Type: application/json" -X POST -u "demo:demo" http://api.holdsport.dk/v1/activities/653806/activities_coaches  -d '{"activities_coach": {}}'
+```
+
+If the coach has the unattend option the action stuff will look something like this
+
+```json
+   "action_method": "DELETE",
+   "action_path": "/v1/activities/653806/activities_coaches/13",
+   "actions": [
+      {
+         "activities_coach": {
+             "name": "Unattend"
+         }
+      }
+   ]
+```
+
+Note that the action_method is DELETE.
+
+Make the coach unattend with the following curl request.
+```
+curl -H "Content-Type: application/json" -X DELETE -u "demo:demo" http://api.holdsport.dk/v1/activities/653806/activities_coaches/13
+```
 
 #### Getting the list of attendees for an activity
 Example
