@@ -132,6 +132,16 @@ The result
                 "id": 171725,
                 "name": "Christian Poulsen"
             }
+        ],
+        "ride": true,
+        "ride_comment": "We need 20 seats",
+        "rides": [
+            {
+                "comment": "BMW",
+                "id": 445,
+                "seats": 3,
+                "user_id": 177854
+            }
         ]
     }
 ]
@@ -295,6 +305,20 @@ The result
 Example
 ```
 curl -H "Content-Type: application/json" -X POST -u "demo:demo" http://api.holdsport.dk/v1/activities/273260/comments -d '{"comment": {"body": "Testkommentar"}}'
+```
+
+#### Adding a ride to an activity
+Example
+```
+curl -H "Content-Type: application/json" -X POST -u "demo:demo" http://api.holdsport.dk/v1/activities/273260/rides -d '{"ride": {"seats": 2, "comment": "BMW" }}'
+````
+
+Please note that the show_ride_button value for an activity should be true to be able to perform this action.
+
+#### Removing a ride from an activity
+Example
+```
+curl -H "Content-Type: application/json" -X DELETE -u "demo:demo" http://api.holdsport.dk/v1/activities/273260/rides/442
 ```
 
 ### Getting the list of team members
