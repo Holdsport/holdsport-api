@@ -142,7 +142,8 @@ The result
                 "seats": 3,
                 "user_id": 177854
             }
-        ]
+        ],
+         "show_ride_button": true
     }
 ]
 ```
