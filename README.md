@@ -143,7 +143,7 @@ The result
                 "user_id": 177854
             }
         ],
-         "show_ride_button": true
+        "show_ride_button": true
     }
 ]
 ```
