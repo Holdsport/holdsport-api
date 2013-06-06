@@ -27,14 +27,16 @@ The result
         "id": 6237, 
         "name": "frenke", 
         "primary_color": "", 
-        "secondary_color": ""
+        "secondary_color": "",
+        "role": 1
     }, 
 ...
     {
         "id": 7369, 
         "name": "Hurricanes", 
         "primary_color": "#ed2637", 
-        "secondary_color": "#ffffff"
+        "secondary_color": "#ffffff",
+        "role": 2
     }
 ] 
 ```
