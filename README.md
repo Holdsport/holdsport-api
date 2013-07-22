@@ -142,7 +142,9 @@ The result
                 "comment": "BMW",
                 "id": 445,
                 "seats": 3,
-                "user_id": 177854
+                "user_id": 177854,
+                "firstname": "Rasmus",
+                "lastname": "Hansen"
             }
         ],
         "show_ride_button": true
