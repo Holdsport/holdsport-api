@@ -17,7 +17,7 @@ JSON UTF-8 encoded strings.
 #### Getting the list of teams
 Example
 ```bash
-curl -u "demo:demo" -H "Accept: application/json" http://api.holdsport.dk/v1/teams
+curl -u "demo:demo" -H "Accept: application/json" https://api.holdsport.dk/v1/teams
 ```
 
 The result
@@ -45,7 +45,7 @@ The result
 #### Getting the list of activities
 Example
 ```
-curl -u "demo:demo" -H "Accept: application/json" http://api.holdsport.dk/v1/teams/6237/activities
+curl -u "demo:demo" -H "Accept: application/json" https://api.holdsport.dk/v1/teams/6237/activities
 ````
 
 The result
@@ -162,20 +162,20 @@ of the first 20 members who haven't responded yet.
 
 Example
 ```
-curl -u "demo:demo" http://api.holdsport.dk/v1/teams/7585/activities?page=2&per_page=10
+curl -u "demo:demo" https://api.holdsport.dk/v1/teams/7585/activities?page=2&per_page=10
 ```
 Furthermore, a date parameter can be added to return activities from this day and onwards.
 
 Example
 ```
-curl -u "demo:demo" http://api.holdsport.dk/v1/teams/7585/activities?date=2012-01-1
+curl -u "demo:demo" https://api.holdsport.dk/v1/teams/7585/activities?date=2012-01-1
 ```
 The default for these parameters are _page=1_, _per_page=20_, and _date = today_.
 
 #### Getting the details for a single activity
 Example
 ```
-curl -u "demo:demo" -H "Accept: application/json" http://api.holdsport.dk/v1/teams/6237/activities/256592
+curl -u "demo:demo" -H "Accept: application/json" https://api.holdsport.dk/v1/teams/6237/activities/256592
 ````
 
 The result
@@ -226,7 +226,7 @@ _actions_ is an array of the possible actions for the user. In the example one a
 ```
 Or speaking _curl_:
 ```
-curl -H "Content-Type: application/json" -X POST -u "demo:demo" http://api.holdsport.dk/v1/activities/256593/activities_users -d '{"activities_user": {"joined_status": 1, "picked": 1}}'
+curl -H "Content-Type: application/json" -X POST -u "demo:demo" https://api.holdsport.dk/v1/activities/256593/activities_users -d '{"activities_user": {"joined_status": 1, "picked": 1}}'
 ```
 If the request was successful a HTTP status 201 (Created) is returned.
 
@@ -263,7 +263,7 @@ Note that the action path ends with activities_coaches (as opposed to activities
 
 Make the coach attend by performing the following request in curl
 ```
-curl -H "Content-Type: application/json" -X POST -u "demo:demo" http://api.holdsport.dk/v1/activities/653806/activities_coaches  -d '{"activities_coach": {}}'
+curl -H "Content-Type: application/json" -X POST -u "demo:demo" https://api.holdsport.dk/v1/activities/653806/activities_coaches  -d '{"activities_coach": {}}'
 ```
 
 If the coach has the unattend option the action stuff will look something like this
@@ -284,13 +284,13 @@ Note that the action_method is DELETE.
 
 Make the coach unattend with the following curl request.
 ```
-curl -H "Content-Type: application/json" -X DELETE -u "demo:demo" http://api.holdsport.dk/v1/activities/653806/activities_coaches/13
+curl -H "Content-Type: application/json" -X DELETE -u "demo:demo" https://api.holdsport.dk/v1/activities/653806/activities_coaches/13
 ```
 
 #### Getting the list of attendees for an activity
 Example
 ```
-curl -u "demo:demo" -H "Accept: application/json" http://api.holdsport.dk/v1/activities/256593/activities_users
+curl -u "demo:demo" -H "Accept: application/json" https://api.holdsport.dk/v1/activities/256593/activities_users
 ```
 
 The result
@@ -309,13 +309,13 @@ The result
 #### Adding a comment to an activity
 Example
 ```
-curl -H "Content-Type: application/json" -X POST -u "demo:demo" http://api.holdsport.dk/v1/activities/273260/comments -d '{"comment": {"body": "Testkommentar"}}'
+curl -H "Content-Type: application/json" -X POST -u "demo:demo" https://api.holdsport.dk/v1/activities/273260/comments -d '{"comment": {"body": "Testkommentar"}}'
 ```
 
 #### Adding a ride to an activity
 Example
 ```
-curl -H "Content-Type: application/json" -X POST -u "demo:demo" http://api.holdsport.dk/v1/activities/273260/rides -d '{"ride": {"seats": 2, "comment": "BMW" }}'
+curl -H "Content-Type: application/json" -X POST -u "demo:demo" https://api.holdsport.dk/v1/activities/273260/rides -d '{"ride": {"seats": 2, "comment": "BMW" }}'
 ````
 
 Please note that the show_ride_button value for an activity should be true to be able to perform this action.
@@ -323,13 +323,13 @@ Please note that the show_ride_button value for an activity should be true to be
 #### Removing a ride from an activity
 Example
 ```
-curl -H "Content-Type: application/json" -X DELETE -u "demo:demo" http://api.holdsport.dk/v1/activities/273260/rides/442
+curl -H "Content-Type: application/json" -X DELETE -u "demo:demo" https://api.holdsport.dk/v1/activities/273260/rides/442
 ```
 
 ### Getting the list of team members
 Example
 ```
-curl -u "demo:demo"  -H "Accept: application/json" http://api.holdsport.dk/v1/teams/7585/members
+curl -u "demo:demo"  -H "Accept: application/json" https://api.holdsport.dk/v1/teams/7585/members
 ```
 
 The result
@@ -357,13 +357,13 @@ The _role_ field can have five possible values 1 for player, 2 for coach, 3 for 
 
 The profile picture in the example can be fetched, by fetching the url
 ```
-http://api.holdsport.dk/media/BAhbB1sHOgZmSSI4MjAxMy8wg
+https://api.holdsport.dk/media/BAhbB1sHOgZmSSI4MjAxMy8wg
 ```
 
 ### Getting a single team member
 Example
 ```
-curl -u "demo:demo"  -H "Accept: application/json" http://api.holdsport.dk/v1/teams/7585/members/78776
+curl -u "demo:demo"  -H "Accept: application/json" https://api.holdsport.dk/v1/teams/7585/members/78776
 ```
 
 The result
@@ -380,7 +380,7 @@ The result
 ### Getting the list of notes for the team
 Example
 ```
-curl -u "demo:demo"  -H "Accept: application/json" http://api.holdsport.dk/v1/teams/7585/notes
+curl -u "demo:demo"  -H "Accept: application/json" https://api.holdsport.dk/v1/teams/7585/notes
 ```
 
 The result
@@ -405,13 +405,13 @@ The result
 
 The attachment in the example can be fetched, by fetching the url
 ```
-http://api.holdsport.dk/media/BAhbBlsHOgZmSSIpMjAxMy8wMS8wNy8xNV8xOF8yMV82NzNfVWRrbGlwXzIuSlBHBjoGRVQ/Udklip-2.JPG
+https://api.holdsport.dk/media/BAhbBlsHOgZmSSIpMjAxMy8wMS8wNy8xNV8xOF8yMV82NzNfVWRrbGlwXzIuSlBHBjoGRVQ/Udklip-2.JPG
 ```
 
 ### Getting the user profile
 Example
 ```
-curl -u "demo:demo"  -H "Accept: application/json" http://api.holdsport.dk/v1/user
+curl -u "demo:demo"  -H "Accept: application/json" https://api.holdsport.dk/v1/user
 ```
 
 Result
@@ -453,7 +453,7 @@ Result
 ### Updating the user profile
 Example
 ```
-curl -H "Content-Type: application/json" -X PUT -u "demo:demo" http://apldsport.dk/v1/user -d '{"user": { "addresses": [{"street": "Sandageralle", "postcode": "8300", "city": "Odder", "mobile": "88888887", "email": "test@holdsport.dk"}], "firstname": "Demo", "lastname": "Demosen"}}'
+curl -H "Content-Type: application/json" -X PUT -u "demo:demo" https://api.holdsport.dk/v1/user -d '{"user": { "addresses": [{"street": "Sandageralle", "postcode": "8300", "city": "Odder", "mobile": "88888887", "email": "test@holdsport.dk"}], "firstname": "Demo", "lastname": "Demosen"}}'
 ```
 A user may have one or two addresses each containing some of the following fields:
 street, city, postcode, telephone, mobile, email, email_ex, parents_name
@@ -461,14 +461,14 @@ street, city, postcode, telephone, mobile, email, email_ex, parents_name
 You can upload a profile picture by using a standard Multipart form submit ie.
 
 ```
-curl -X PUT -F "user[profile_picture]=@photo.jpg" -u "demo:demo" http://api.holdsport.dk/v1/user
+curl -X PUT -F "user[profile_picture]=@photo.jpg" -u "demo:demo" https://api.holdsport.dk/v1/user
 ```
 
 
 ### Getting the list of profiles that this user is an admin for
 Example
 ```bash
-curl -u "demo:demo" -H "Accept: application/json" http://api.holdsport.dk/v1/profiles
+curl -u "demo:demo" -H "Accept: application/json" https://api.holdsport.dk/v1/profiles
 ```
 
 Result
@@ -496,5 +496,5 @@ To authenticate as the second user in the example you would use the user id (794
 
 Example
 ```bash
-curl -u "79413:demo" -H "Accept: application/json" http://api.holdsport.dk/v1/teams
+curl -u "79413:demo" -H "Accept: application/json" https://api.holdsport.dk/v1/teams
 ```
