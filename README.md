@@ -4,7 +4,7 @@ This readme describes the Holdsport/SportMember REST API.
 ## Authentication
 The API uses http basic authentication. If the username is demo and the password demo:
 ```bash
-http://demo:demo@api.holdsport.dk/v1/teams
+https://demo:demo@api.holdsport.dk/v1/teams
 ```
 You can use SportMember usernames and passwords as well.
 
