@@ -1,0 +1,189 @@
+openapi: 3.0.0
+info:
+  title: Holdsport/SportMember API
+  version: 1.0.0
+servers:
+  - url: "https://api.holdsport.dk/v1"
+paths:
+  /teams:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Team"
+          description: An array of teams
+      summary: Get list of teams
+  "/teams/{teamId}/activities":
+    get:
+      parameters:
+        - name: teamId
+          description: Numeric ID of the team
+          schema:
+            type: integer
+          in: path
+          required: true
+        - name: page
+          description: Page number for pagination
+          schema:
+            type: integer
+          in: query
+        - name: per_page
+          description: Number of items per page for pagination
+          schema:
+            type: integer
+          in: query
+        - name: date
+          description: Starting date for retrieving activities
+          schema:
+            format: date
+            type: string
+          in: query
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Activity"
+          description: An array of activities
+      summary: Get list of activities for a team
+  "/teams/{teamId}/activities/{activityId}":
+    get:
+      parameters:
+        - name: teamId
+          description: Numeric ID of the team
+          schema:
+            type: integer
+          in: path
+          required: true
+        - name: activityId
+          description: Numeric ID of the activity
+          schema:
+            type: integer
+          in: path
+          required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Activity"
+          description: A single activity detail
+      summary: Get a single activity detail
+  "/teams/{teamId}/members":
+    get:
+      parameters:
+        - name: teamId
+          description: Numeric ID of the team
+          schema:
+            type: integer
+          in: path
+          required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Member"
+          description: An array of team members
+      summary: Get list of team members
+  "/teams/{teamId}/members/{memberId}":
+    get:
+      parameters:
+        - name: teamId
+          description: Numeric ID of the team
+          schema:
+            type: integer
+          in: path
+          required: true
+        - name: memberId
+          description: Numeric ID of the member
+          schema:
+            type: integer
+          in: path
+          required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Member"
+          description: A single team member
+      summary: Get a single team member
+  "/teams/{teamId}/notes":
+    get:
+      parameters:
+        - name: teamId
+          description: Numeric ID of the team
+          schema:
+            type: integer
+          in: path
+          required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Note"
+          description: An array of notes
+      summary: Get list of notes for the team
+components:
+  schemas:
+    Team:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+    Activity:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        date:
+          format: date-time
+          type: string
+        location:
+          type: string
+    Member:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        role:
+          type: string
+        email:
+          format: email
+          type: string
+        phone:
+          type: string
+    Note:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        content:
+          type: string
+        date:
+          format: date-time
+          type: string
