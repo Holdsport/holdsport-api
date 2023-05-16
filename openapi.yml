@@ -154,40 +154,63 @@ components:
     Activity:
       type: object
       properties:
+        comment:
+          type: string
+        endtime:
+          type: string
+          format: date-time
         id:
           type: integer
         name:
           type: string
-        description:
+        pickup_place:
           type: string
-        date:
+        pickup_time:
+          type: string
+        place:
+          type: string
+        starttime:
+          type: string
           format: date-time
+        status:
           type: string
-        location:
+        action_method:
           type: string
-    Member:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
+        action_path:
           type: string
-        role:
-          type: string
-        email:
-          format: email
-          type: string
-        phone:
-          type: string
-    Note:
-      type: object
-      properties:
-        id:
-          type: integer
-        title:
-          type: string
-        content:
-          type: string
-        date:
-          format: date-time
-          type: string
+        actions:
+          type: array
+          items:
+            type: string
+      Member:
+        type: object
+        properties:
+          address:
+            type: string
+          email:
+            type: string
+            format: email
+          id:
+            type: integer
+          mobile:
+            type: string
+          name:
+            type: string
+          profile_picture_path:
+            type: string
+          role:
+            type: integer
+      Note:
+        type: object
+        properties:
+          attachment_path:
+            type: string
+          body:
+            type: string
+          created_at:
+            type: string
+            format: date-time
+          created_by:
+            type: string
+          title:
+            type: string
