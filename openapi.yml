@@ -145,8 +145,12 @@ components:
           type: integer
         name:
           type: string
-        description:
+        primary_color:
           type: string
+        secondary_color:
+          type: string
+        role:
+          type: integer
     Activity:
       type: object
       properties:
