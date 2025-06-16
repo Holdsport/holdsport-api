@@ -182,35 +182,35 @@ components:
           type: array
           items:
             type: string
-      Member:
-        type: object
-        properties:
-          address:
-            type: string
-          email:
-            type: string
-            format: email
-          id:
-            type: integer
-          mobile:
-            type: string
-          name:
-            type: string
-          profile_picture_path:
-            type: string
-          role:
-            type: integer
-      Note:
-        type: object
-        properties:
-          attachment_path:
-            type: string
-          body:
-            type: string
-          created_at:
-            type: string
-            format: date-time
-          created_by:
-            type: string
-          title:
-            type: string
+    Member:
+      type: object
+      properties:
+        address:
+          type: string
+        email:
+          type: string
+          format: email
+        id:
+          type: integer
+        mobile:
+          type: string
+        name:
+          type: string
+        profile_picture_path:
+          type: string
+        role:
+          type: integer
+    Note:
+      type: object
+      properties:
+        attachment_path:
+          type: string
+        body:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        created_by:
+          type: string
+        title:
+          type: string
