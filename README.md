@@ -307,6 +307,44 @@ The result
 ]
 ```
 
+#### Getting the list of tasks for an activity
+Example
+```
+curl -u "demo:demo" -H "Accept: application/json" https://api.holdsport.dk/v1/activities/256593/activity_tasks
+```
+
+The result
+```json
+[
+    {
+        "id": 9911,
+        "name": "Bring water",
+        "max_participants": 2,
+        "enable_attend": true,
+        "activity_id": 256593,
+        "activity_tasks": [
+            {
+                "id": 4489001,
+                "user_id": 58856,
+                "name": "Demo Demo"
+            }
+        ]
+    },
+    {
+        "id": 9912,
+        "name": "Snacks",
+        "max_participants": null,
+        "enable_attend": false,
+        "activity_id": 256593,
+        "activity_tasks": []
+    }
+]
+```
+
+The endpoint returns all tasks configured for the activity, including both pickable and non-pickable tasks.  
+_max_participants_ is `null` when no limit is configured.  
+_activity_tasks_ contains users already assigned to each task.
+
 #### Adding a comment to an activity
 Example
 ```

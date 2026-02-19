@@ -75,6 +75,25 @@ paths:
                 $ref: "#/components/schemas/Activity"
           description: A single activity detail
       summary: Get a single activity detail
+  "/activities/{activityId}/activity_tasks":
+    get:
+      parameters:
+        - name: activityId
+          description: Numeric ID of the activity
+          schema:
+            type: integer
+          in: path
+          required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ActivityTaskType"
+          description: Activity tasks with assigned users
+      summary: Get tasks for an activity
   "/teams/{teamId}/members":
     get:
       parameters:
@@ -213,4 +232,31 @@ components:
         created_by:
           type: string
         title:
+          type: string
+    ActivityTaskType:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        max_participants:
+          type: integer
+          nullable: true
+        enable_attend:
+          type: boolean
+        activity_id:
+          type: integer
+        activity_tasks:
+          type: array
+          items:
+            $ref: "#/components/schemas/ActivityTaskAssignment"
+    ActivityTaskAssignment:
+      type: object
+      properties:
+        id:
+          type: integer
+        user_id:
+          type: integer
+        name:
           type: string
