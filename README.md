@@ -310,7 +310,7 @@ The result
 #### Getting the list of tasks for an activity
 Example
 ```
-curl -u "demo:demo" -H "Accept: application/json" https://api.holdsport.dk/v1/activities/256593/activity_tasks
+curl -u "demo:demo" -H "Accept: application/json" https://api.holdsport.dk/v1/activities/53048293/activity_tasks
 ```
 
 The result
@@ -321,7 +321,7 @@ The result
         "name": "Bring water",
         "max_participants": 2,
         "enable_attend": true,
-        "activity_id": 256593,
+        "activity_id": 53048293,
         "activity_tasks": [
             {
                 "id": 4489001,
@@ -335,7 +335,7 @@ The result
         "name": "Snacks",
         "max_participants": null,
         "enable_attend": false,
-        "activity_id": 256593,
+        "activity_id": 53048293,
         "activity_tasks": []
     }
 ]
