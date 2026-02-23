@@ -94,6 +94,40 @@ paths:
                   $ref: "#/components/schemas/ActivityTaskType"
           description: Activity tasks with assigned users
       summary: Get tasks for an activity
+    post:
+      parameters:
+        - name: activityId
+          description: Numeric ID of the activity
+          schema:
+            type: integer
+          in: path
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ActivityTaskCreateRequest"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ActivityTaskAssignment"
+          description: Assignment already existed for the same activity/task/user
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ActivityTaskAssignment"
+          description: Assignment created
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+          description: Invalid task assignment request
+      summary: Assign a task on an activity
   "/teams/{teamId}/members":
     get:
       parameters:
@@ -259,4 +293,23 @@ components:
         user_id:
           type: integer
         name:
+          type: string
+    ActivityTaskCreateRequest:
+      type: object
+      properties:
+        activity_task:
+          type: object
+          properties:
+            task_type_id:
+              type: integer
+            user_id:
+              type: integer
+          required:
+            - task_type_id
+      required:
+        - activity_task
+    ErrorResponse:
+      type: object
+      properties:
+        status:
           type: string

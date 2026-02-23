@@ -334,7 +334,7 @@ The result
         "id": 9912,
         "name": "Snacks",
         "max_participants": null,
-        "enable_attend": false,
+        "enable_attend": true,
         "activity_id": 53048293,
         "activity_tasks": []
     }
@@ -344,6 +344,40 @@ The result
 The endpoint returns all tasks configured for the activity, including both pickable and non-pickable tasks.  
 _max_participants_ is `null` when no limit is configured.  
 _activity_tasks_ contains users already assigned to each task.
+
+#### Assigning the current user to a task on an activity
+Use the `task_type_id` from `GET /v1/activities/{activityId}/activity_tasks`.
+
+Example
+```bash
+curl -H "Content-Type: application/json" -X POST -u "demo:demo" https://api.holdsport.dk/v1/activities/53048293/activity_tasks -d '{"activity_task": {"task_type_id": 906194}}'
+```
+
+Result (`201 Created`)
+```json
+{
+  "id": 847500,
+  "user_id": 830700,
+  "name": "Bob Palmer"
+}
+```
+
+#### Assigning another user to a task (coach/club admin only)
+Only coaches and club admins for the activity can assign a different user.
+
+Example
+```bash
+curl -H "Content-Type: application/json" -X POST -u "demo:demo" https://api.holdsport.dk/v1/activities/53048293/activity_tasks -d '{"activity_task": {"task_type_id": 906194, "user_id": 830701}}'
+```
+
+Behavior notes:
+- Returns `200 OK` with the existing assignment if that user is already assigned to the same task.
+- Returns `422 Unprocessable Entity` when:
+- task or user is invalid
+- requester is not allowed to assign that user
+- target user is not possible for that activity
+- current user tries to sign up for a non-pickable task
+- task is at `max_participants`
 
 #### Adding a comment to an activity
 Example
