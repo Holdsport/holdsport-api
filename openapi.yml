@@ -204,6 +204,8 @@ components:
           type: string
         role:
           type: integer
+          description: "Team member role: 1 player, 2 coach, 3 assistant coach, 4 injured, 5 inactive, 6 team leader."
+          enum: [1, 2, 3, 4, 5, 6]
     Activity:
       type: object
       properties:
@@ -253,6 +255,8 @@ components:
           type: string
         role:
           type: integer
+          description: "Team member role: 1 player, 2 coach, 3 assistant coach, 4 injured, 5 inactive, 6 team leader."
+          enum: [1, 2, 3, 4, 5, 6]
     Note:
       type: object
       properties:

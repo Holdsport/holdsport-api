@@ -41,6 +41,7 @@ The result
     }
 ] 
 ```
+The _role_ field can have six possible values 1 for player, 2 for coach, 3 for assistant coach, 4 for injured, 5 for inactive, and 6 for team leader.
 
 ### Activities
 #### Getting the list of activities
@@ -426,7 +427,7 @@ The result
   }
 ]
 ```
-The _role_ field can have five possible values 1 for player, 2 for coach, 3 for assistant coach, 4 for injured, and 5 for inactive.
+The _role_ field can have six possible values 1 for player, 2 for coach, 3 for assistant coach, 4 for injured, 5 for inactive, and 6 for team leader.
 
 The profile picture in the example can be fetched, by fetching the url
 ```
