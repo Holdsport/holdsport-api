@@ -1,6 +1,7 @@
-# Holdsport API
+# Holdsport / SportMember API
 
-The documentation of the Holdsport v1 API now lives at https://api.holdsport.dk/docs.
+The documentation of the Holdsport / SportMember v1 API now lives at https://api.holdsport.dk/docs.
+Holdsport and SportMember are the same service under two names; one API serves both.
 
 - Reference (browser): https://api.holdsport.dk/docs
 - Markdown pages: https://api.holdsport.dk/docs/v1/index.md
@@ -9,7 +10,7 @@ The documentation of the Holdsport v1 API now lives at https://api.holdsport.dk/
 
 ## Pages
 
-- [Holdsport API v1](https://api.holdsport.dk/docs/v1/index.md): Overview of the v1 REST API: base URL, conventions and where to find each topic.
+- [Holdsport / SportMember API v1](https://api.holdsport.dk/docs/v1/index.md): Overview of the v1 REST API: base URL, conventions and where to find each topic.
 - [Quick start](https://api.holdsport.dk/docs/v1/quick-start.md): Make your first calls with curl: list teams, read upcoming activities, attend one, and poll efficiently.
 - [Authentication](https://api.holdsport.dk/docs/v1/authentication.md): HTTP Basic auth with a Holdsport or SportMember login, managed profiles (acting for a child), and what a 401 means.
 - [Polling and caching](https://api.holdsport.dk/docs/v1/polling.md): Use ETag and If-None-Match to poll cheaply, what changes an ETag, and how often to poll.
@@ -24,6 +25,6 @@ The documentation of the Holdsport v1 API now lives at https://api.holdsport.dk/
 - [User and profiles](https://api.holdsport.dk/docs/v1/user-and-profiles.md): Read the logged-in user's profile and list the managed profiles (children) the user can act as.
 - [Removed endpoints and changes](https://api.holdsport.dk/docs/v1/removed.md): Endpoints the old documentation listed that no longer exist, corrections to the old documentation, recent behaviour changes, and endpoints added since.
 
-This repository is a mirror and is updated from the Holdsport source. See
+This repository is a mirror and is updated from the Holdsport / SportMember source. See
 [`CHANGELOG.md`](CHANGELOG.md) for endpoints added since and for what changed
 compared with the earlier README.
